@@ -133,15 +133,15 @@ abstract class AbstractActivity : AppCompatActivity() {
                     }
 
                     EVENT_CONNECT_ERROR -> {
-
+                        ToastUtils.showShortToast(this, "Connection error")
                     }
 
                     EVENT_DISCONNECT -> {
-
+                        ToastUtils.showShortToast(this, "Disconnected")
                     }
 
                     EVENT_RECONNECTING -> {
-
+                        ToastUtils.showShortToast(this, "Reconnecting")
                     }
                 }
             }

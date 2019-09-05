@@ -3,20 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.canvasexample">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".CanvasApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
+        tools:targetApi="m"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".activity.UsersActivity"
             android:configChanges="orientation" />
-        <activity
+
+        <!--<activity
             android:name=".activity.AnnotationActivity"
             android:configChanges="orientation" />
         <activity
@@ -27,9 +33,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>-->
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:configChanges="orientation" />
+        <activity
+            android:name=".activity.AnnotationActivity"
+            android:configChanges="orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

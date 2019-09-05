@@ -16,6 +16,8 @@ class CanvasApplication : Application(), Application.ActivityLifecycleCallbacks 
     companion object {
         lateinit var instance: CanvasApplication
 
+        var mURL = "http://192.168.1.117:3000"
+
         fun emitEvent(event: String, data: JSONObject) {
             instance.socket.emit(event, data)
         }
@@ -34,7 +36,7 @@ class CanvasApplication : Application(), Application.ActivityLifecycleCallbacks 
         instance = this
         registerActivityLifecycleCallbacks(this)
         try {
-            socket = IO.socket("http://192.168.1.117:3000")
+            socket = IO.socket(mURL)
         } catch (e: URISyntaxException) {
             e.printStackTrace()
         }
